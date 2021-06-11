@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "yarn jest"
   },
   "dependencies": {
     "@prismicio/client": "^4.0.0",
     "@stripe/stripe-js": "^1.13.2",
+    "@types/jest": "^26.0.23",
     "@types/prismic-dom": "^2.1.1",
     "axios": "^0.21.1",
     "faunadb": "^4.1.3",
