@@ -35,7 +35,7 @@ describe('Post Preview page', () => {
     const pushMock = jest.fn();
 
     useSessionMocked.mockReturnValueOnce([
-      {activeSubscription: 'fake-active-subscription'},
+      { activeSubscription: 'fake-active-subscription' },
       false
     ] as any);
 
@@ -49,43 +49,41 @@ describe('Post Preview page', () => {
 
   });
 
-  // it('loads initial data', async () => {
-  //   const getSessionMocked = mocked(getSession);
-  //   const getPrismicClientMocked = mocked(getPrismicClient);
+  it('loads initial data', async () => {
+    const getPrismicClientMocked = mocked(getPrismicClient);
 
-  //   getPrismicClientMocked.mockReturnValueOnce({
-  //     getByUID: jest.fn().mockResolvedValueOnce({
-  //       data: {
-  //         title: [
-  //           { type: 'heading', text: 'My new post' }
-  //         ],
-  //         content: [
-  //           { type: 'paragraph', text: 'Post content' }
-  //         ]
-  //       },
-  //       last_publication_date: '04-01-2021'
-  //     })
-  //   } as any);
+    getPrismicClientMocked.mockReturnValueOnce({
+      getByUID: jest.fn().mockResolvedValueOnce({
+        data: {
+          title: [
+            { type: 'heading', text: 'My new post' }
+          ],
+          content: [
+            { type: 'paragraph', text: 'Post content' }
+          ]
+        },
+        last_publication_date: '04-01-2021'
+      })
+    } as any);
 
+    const response = await getStaticProps({
+      params: {
+        slug: 'my-new-post'
+      }
+    });
 
-  //   getSessionMocked.mockResolvedValueOnce({
-  //     activeSubscription: 'fake-active-subscription'
-  //   } as any);
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          post: {
+            slug: 'my-new-post',
+            title: 'My new post',
+            content: '<p>Post content</p>',
+            updatedAt: '01 de abril de 2021',
+          }
+        }
+      })
+    );
 
-  //   const response = await getServerSideProps({ params: { slug: 'my-new-post' } } as any);
-
-  //   expect(response).toEqual(
-  //     expect.objectContaining({
-  //       props: {
-  //         post: {
-  //           slug: 'my-new-post',
-  //           title: 'My new post',
-  //           content: '<p>Post content</p>',
-  //           updatedAt: '01 de abril de 2021',
-  //         }
-  //       }
-  //     })
-  //   );
-
-  // });
+  });
 });
