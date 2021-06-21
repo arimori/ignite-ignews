@@ -23,7 +23,10 @@ describe('Header component', () => {
   it('renders correctly', () => {
     render(
       <Header />
-    )
+    );
+
+    //Use it to find exactly what you looking for testing
+    // screen.logTestingPlaygroundURL();
 
     expect(screen.getByText('Home')).toBeInTheDocument();
     expect(screen.getByText('Posts')).toBeInTheDocument();
