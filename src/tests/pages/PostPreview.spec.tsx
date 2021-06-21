@@ -45,7 +45,7 @@ describe('Post Preview page', () => {
 
     render(<Post post={post} />);
 
-    expect(pushMock).toHaveBeenCalledWith('/posts/my-news-post');
+    expect(pushMock).toHaveBeenCalledWith('/posts/my-new-post');
 
   });
 
