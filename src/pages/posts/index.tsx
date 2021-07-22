@@ -8,15 +8,15 @@ import { RichText } from 'prismic-dom';
 
 import styles from './styles.module.scss';
 
-interface PostsProps {
-  posts: Post[]
-}
-
 type Post = {
   slug: string;
   title: string;
   excerpt: string;
   updatedAt: string;
+}
+
+interface PostsProps {
+  posts: Post[]
 }
 
 export default function Posts({ posts }: PostsProps) {
