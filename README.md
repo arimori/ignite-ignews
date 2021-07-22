@@ -15,8 +15,8 @@ Study blog application built with Next (SSG and SSR)
 ### 📑 Ignite | ignews
 
 ---
-The ignews blog is a monthly subscription service that gives you access to content full of posts about development using the ReactJS framework.
-As part of a study application from Ignite bootcamp developed by [Rocketseat](https://rocketseat.com.br/), this blog has been built in order to learn and practice Next features such as SSR, SSG and learn how to integrate with some other services.
+The ignews blog is a monthly subscription service that gives you access to some posts about web development using ReactJS framework.
+As part of a study application from Ignite bootcamp developed by [Rocketseat](https://rocketseat.com.br/), this blog has been built in order to learn, implement and practice some `NextJS` features such as **SSR**, **SSG** and integration with third part services.
 In this project, we've integrated with GitHub Ouath so that create an authentication.
 Also, this blog has integration with **FaunaDB** (Serverless NoSQL DB), **Stripe** (Payment API) and **Prismic CMS** (headless CMS to manage the posts content).
 Besides those integration, it was the first time I've worked with webhooks in order to check if the current session has a authenticated user with an active subscription.
